@@ -1,6 +1,7 @@
 package br.net.benfatto.springjpa.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * @author Murilo Oliveira
@@ -17,6 +18,12 @@ public class Post {
     @Column(name = "texto")
     private String texto;
 
+    @Column(name = "data")
+    private LocalDate data;
+
+//    @OneToMany(mappedBy = "post")
+//    private List<Comentario> comentarios;
+
     public Long getId() {
         return id;
     }
@@ -32,4 +39,13 @@ public class Post {
     public void setTexto(String texto) {
         this.texto = texto;
     }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
 }
